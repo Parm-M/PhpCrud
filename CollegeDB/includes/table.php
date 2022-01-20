@@ -7,6 +7,25 @@
   $records = mysqli_num_rows($result);
 ?>
 
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="editModal">Delete Data</button>
+<div class="modal" tabindex="-1">
+  <div class="modal-dialog id="editModal" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Delete Data</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Please be Sure Before Deleting Data.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
 <!-- Table Starts Here -->
 
 <div class="container">
@@ -33,8 +52,8 @@
                     <td><?php echo $row['EMAIL']; ?></td>
                     <td><?php echo $row['COURSE']; ?></td>
                     <td>
-                      <a href="/collegeDB/add.php?id=<?php echo $row['ID']; ?>" class="btn btn-primary">EDIT</a>
-                      <a href="/collegeDB/delete.php?id=<?php echo $row['ID']; ?>" class="btn btn-secondary">DELETE</a>
+                      <a href="add.php?id=<?php echo $row['ID']; ?>" class="btn btn-primary">EDIT</a>
+                      <a href="delete.php?id=<?php echo $row['ID']; ?>" class="btn btn-secondary" onclick="javascript:return confirm('Do you really Want to Delete?');">DELETE</a>
                     </td>
                   </tr>
 
